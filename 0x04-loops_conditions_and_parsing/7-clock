@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # script that displays the time for 12 hours and 59 minutes
 cnt1=0
-while [ $cnt1 -le 10 ]
+while [ $cnt1 -le 12 ]
 do
 	echo "Hour: " $cnt1
 	cnt2=1
