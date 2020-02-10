@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# kills To infinity and beyond indefinitely
+trap "echo 'I am invincible!!!'" SIGTERM
+for (( cnt=1; ; cnt++ ))
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
