@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # configure ip in
-
+cp /etc/hosts ~/newhosts
+echo "127.0.0.2 localhost" > ~/newhosts
+echo "8.8.8.8 facebook.com" >> ~/newhosts
+cp -f ~/newhosts /etc/hosts
