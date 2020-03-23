@@ -1,3 +1,4 @@
+# create a file with specific requirements
 file { '/tmp/holberton':
   ensure  => file,
   mode    => '0744',
