@@ -17,7 +17,7 @@ backend balanced_servers
     http-request set-header X-Forwarded-Port %[dst_port]
     http-request add-header X-Forwarded-Proto https if { ssl_fc }
     option httpchk HEAD / HTTP/1.1rnHost:localhost
-    server 1165-web-01  35.231.128.169:80
+    server 1165-web-01  3.91.190.221:80
     server 1165-web-02  54.234.171.12:80
 " >> /etc/haproxy/haproxy.cfg
 sudo systemctl restart haproxy
