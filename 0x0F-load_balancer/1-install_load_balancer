@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# install and configure loader
+# the las estable version
+sudo add-apt-repository ppa:vbernat/haproxy-1.7
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+sudo echo "
+frontend Local_Server
+    bind *:80
+    mode http
+    default_backend balanced_servers
+
+backend balanced_servers
+    mode http
+    balance roundrobin
+    option forwardfor
+    http-request set-header X-Forwarded-Port %[dst_port]
+    http-request add-header X-Forwarded-Proto https if { ssl_fc }
+    option httpchk HEAD / HTTP/1.1rnHost:localhost
+    server 1165-web-01  35.231.128.169:80
+    server 1165-web-02  54.234.171.12:80
+" >> /etc/haproxy/haproxy.cfg
+sudo systemctl restart haproxy
