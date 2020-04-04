@@ -2,3 +2,5 @@
 # fix the por 8080 to 80 Nginx
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo /etc/init.d/nginx stop
+sudo /etc/init.d/nginx start
