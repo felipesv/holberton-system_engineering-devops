@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # fix the por 8080 to 80 Nginx
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo /etc/init.d/nginx restart
 pkill -1 nginx
