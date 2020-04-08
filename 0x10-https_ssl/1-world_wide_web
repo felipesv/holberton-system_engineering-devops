@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# display information about subdomains
+fn_getinfo()
+{
+	host="$1.$2"
+	data=$(dig "$host" | grep -A1 'ANSWER SECTION:' | tail -1 | tr '\t' '#' | tr ' ' '#')
+	ip=$(echo "$data" | cut -d'#' -f5-)
+	re=$(echo "$data" | cut -d'#' -f4)
+	echo "$1 $re $ip" | awk '{print "The subdomain "$1" is a "$2" record and points to "$3}'	
+}
+
+if (($# == 1))
+then
+	fn_getinfo "www" "$1"
+	fn_getinfo "lb-01" "$1"
+	fn_getinfo "web-01" "$1"
+	fn_getinfo "web-02" "$1"
+fi
+
+if (($# == 2))
+then
+	fn_getinfo "$2" "$1"
+fi
