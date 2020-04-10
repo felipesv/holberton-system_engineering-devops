@@ -1,4 +1,19 @@
 #!/usr/bin/env bash
-# fix user
+# stop apache
+pkill -1 apache2
+# fix user nginx
+print %s "server {
+    listen 8080 default_server;
+    listen [::]:8080 default_server;
+
+    root /usr/share/nginx/html;
+    index index.html index.htm;
+    server_name localhost;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}" > /etc/nginx/sites-available/default
 sudo sed -i '1s/^/user nginx;\n/' /etc/nginx/nginx.conf
+# restart service
 sudo /etc/init.d/nginx restart
