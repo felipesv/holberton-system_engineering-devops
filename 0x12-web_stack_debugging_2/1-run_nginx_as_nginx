@@ -2,7 +2,7 @@
 # stop apache
 pkill -1 apache2
 # fix user nginx
-print %s "server {
+printf %s "server {
     listen 8080 default_server;
     listen [::]:8080 default_server;
 
