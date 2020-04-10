@@ -16,5 +16,6 @@ print %s "server {
 }" > /etc/nginx/sites-available/default
 sudo sed -i '1s/^/user nginx;\n/' /etc/nginx/nginx.conf
 # restart service
+chmod 644 /etc/nginx/nginx.conf
 sudo -u nginx service nginx stop
 sudo -u nginx service nginx start
