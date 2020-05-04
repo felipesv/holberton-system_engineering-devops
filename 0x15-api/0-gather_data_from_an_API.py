@@ -21,7 +21,8 @@ if __name__ == '__main__':
         if data.get("completed"):
             number_comp += 1
     # create the lines to print
-    line_1 = user_data.get("name")
+    line_1 = "Employee "
+    line_1 += user_data.get("name")
     line_1 += " is done with tasks"
     line_1 += "({}/{}):".format(number_comp, number_task)
     line_2 = ""
