@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+import csv
 import requests
 import sys
-import csv
 
 if __name__ == '__main__':
     id = sys.argv[1]
@@ -22,6 +22,7 @@ if __name__ == '__main__':
         field_name = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS",
                       "TASK_TITLE"]
         writer = csv.DictWriter(csvFile, field_name, quoting=csv.QUOTE_ALL)
+        # writer.writeheader()
         for data in task_data:
             writer.writerow({"USER_ID": id,
                              "USERNAME": user_data.get("username"),
