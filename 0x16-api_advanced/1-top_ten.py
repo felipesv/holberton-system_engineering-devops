@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Top Ten
+"""Top Ten"""
 import requests
 
 
@@ -7,9 +7,9 @@ def top_ten(subreddit):
     """
     Top Ten
     """
-    head = {"User-Agent": "wfelipesv"}
+    headers = {"User-Agent": "wfelipesv"}
     url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
-    r = requests.get(url, headers=head)
+    r = requests.get(url, headers=headers, allow_redirects=False)
     try:
         if (r.status_code != 200):
             raise Exception()
