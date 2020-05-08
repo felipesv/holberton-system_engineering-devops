@@ -3,7 +3,7 @@
 import requests
 
 
-def recurse(subreddit, after="", hot_list=[]):
+def recurse(subreddit, hot_list=[], after=""):
     """
     Recurse it!
     """
@@ -21,7 +21,7 @@ def recurse(subreddit, after="", hot_list=[]):
     for item in json_data.get("data").get("children"):
         hot_list.append(item.get("data").get("title"))
     after = json_data.get("data").get("after")
-    val_return = recurse(subreddit, after)
+    val_return = recurse(subreddit, [], after)
     return hot_list + val_return
     # except Exception:
     # return None
