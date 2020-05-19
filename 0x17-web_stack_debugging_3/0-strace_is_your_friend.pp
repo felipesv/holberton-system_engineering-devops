@@ -8,12 +8,12 @@
 
 exec { 'change phpp to php':
   command => "sed -i 's/phpp/php/g' wp-settings.php",
-  cwd => '/var/www/html/',
-  path => '/bin/',
+  cwd     => '/var/www/html/',
+  path    => '/bin/',
 }
 
 # restart apache service
 service { 'restart-apache2':
-  name => 'apache2',
+  name       => 'apache2',
   hasrestart => true,
 }
