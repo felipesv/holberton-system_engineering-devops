@@ -21,12 +21,12 @@ Within the development team there were several team participants who were involv
 
 ## Timeline
 
-19:45:00 - Changes uploaded to the production server.
-20:00:00 - First error detected.
-20:15:00 - First billing failure report arrives.
-20:20:00 - the team begins to search the matches of the events table together with the report sent.
-20:30:00 - they find the problem
-20:32:00 - The respective tables of the fault change
-20:35:00 - Changes are mounted on the test server
-20:37:00 - They carry out billing tests with real values
-20:45:00 - Upload change to the production server
+- 19:45:00 - Changes uploaded to the production server.
+- 20:00:00 - First error detected.
+- 20:15:00 - First billing failure report arrives.
+- 20:20:00 - the team begins to search the matches of the events table together with the report sent.
+- 20:30:00 - they find the problem
+- 20:32:00 - The respective tables of the fault change
+- 20:35:00 - Changes are mounted on the test server
+- 20:37:00 - They carry out billing tests with real values
+- 20:45:00 - Upload change to the production server
