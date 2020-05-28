@@ -1,8 +1,11 @@
+# change the limit 15 with 4096 in all coincidences
 exec { 'change limit':
-  command => 'sed -i "s/15/4096/" /etc/default/nginx',
-  path    => '/bin/sed'
+  command => 'sed -i "s/15/4096/g" nginx',
+  cwd     => '/etc/default/',
+  path    => '/bin/',
 }
-exec { 'restar nginx':
-  command => 'service restar nginx',
-  path    => '/usr/sbin/service'
+# restart the nginx service
+exec { 'restart-nginx':
+  command => 'nginx restart',
+  path    => '/etc/init.d/',
 }
