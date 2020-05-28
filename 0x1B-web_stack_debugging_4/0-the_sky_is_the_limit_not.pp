@@ -3,7 +3,7 @@ exec { 'change limit':
   command => 'sed -i "s/15/4096/g" nginx',
   cwd     => '/etc/default/',
   path    => '/bin/',
-}
+} ->
 # restart the nginx service
 exec { 'restart-nginx':
   command => 'nginx restart',
