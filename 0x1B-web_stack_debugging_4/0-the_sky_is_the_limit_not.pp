@@ -1,8 +1,8 @@
-exec { 'fixNginxService':
-  command => 'sed -i s/15/2000/ /etc/default/nginx',
-  path    => '/bin',
+exec { 'change limit':
+  command => 'sed -i "s/15/4096/" /etc/default/nginx',
+  path    => '/bin/sed'
 }
-service { 'nginx':
-  ensure    => running,
-  subscribe => Exec['fixNginxService'],
+exec { 'restar nginx':
+  command => 'service restar nginx',
+  path    => '/usr/sbin/service'
 }
